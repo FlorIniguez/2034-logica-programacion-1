@@ -1,12 +1,16 @@
-let numeroSecreto = 2;
-//inicio la variable
+// Math.Random por 10 por que es el màximo de num que quiero
+//le sumo 1 al final, para evitar el 0 e incluir el 10. sino iba a ir del 0 al 9
+let numMaximo = parseInt(prompt('Ingrese un nùmero màximo'))
+let numeroSecreto =Math.floor(Math.random()*numMaximo) + 1;
 let numeroUsuario = 0;
 let intentos = 1;
-//let palabraVeces = 'vez';
-let maximosIntentos = 3;
+let maximosIntentos = 6;
+
+
+
 
 while (numeroSecreto != numeroUsuario) {
-  numeroUsuario = prompt("Me indicas un número entre 1 y 10:");
+  numeroUsuario = parseInt(prompt(`Me indicas un nùmero entre 1 y ${numMaximo}`));
 
   console.log(numeroUsuario);
 
@@ -18,11 +22,8 @@ while (numeroSecreto != numeroUsuario) {
     } else {
       alert("El número secreto es mayor");
     }
-    //formas de sumar 1, la ultima la mejor
-    //intentos = intentos + 1;
-    //intentos +=1;
     intentos++;
-    //palabraVeces = 'veces';
+
     if (intentos > maximosIntentos) {
       alert(`Llegaste al nùmero màximo de ${maximosIntentos} intentos`);
 
